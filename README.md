@@ -1,4 +1,4 @@
-# Automating web application deployment on IBM Cloud Kubernetes Service
+# Automating web application deployment on IBM Cloud Red Hat Openshift
 
 IBM Cloud Schematics actions uses Hackathon Starter web application to create an Ansible playbook template. Ansible playbook is preconfigured with the tools and softwares required to deploy the Hackathon Starter application. All that you need to do is create an IBM Cloud Kubernetes service, create Indentity and Access Management (IAM) and IAM refresh token to use the powerful Ansible playbook to automate the web application deployment by using IBM Cloud Kubernetes Service and Schematics action.
 
