@@ -14,4 +14,6 @@
   hosts: localhost
   roles:
     - role: set-kube-config
+    - role: web
+    - role: loadbalancer
 
