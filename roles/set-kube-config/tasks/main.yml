@@ -1,16 +1,16 @@
 - name: Download kubeconfig
   ansible.builtin.uri:
-    url: https://your.form.based.auth.example.com/index.php
+    url: https://containers.cloud.ibm.com/global/v2/applyRBACAndGetKubeconfig
     method: POST
-    body_format: form-urlencoded
+    body_format: json
     dest: "{{ zip_path }}"
     headers: 
         Authorization: '{{ IC_IAM_TOKEN }}'
         X-Auth-Refresh-Token: '{{ IC_IAM_REFRESH_TOKEN }}'
-        X-Auth-Resource-Group: '42ee88169dd7406584925447bc5b25eb'
+        X-Auth-Resource-Group: '{{ IC_RESOURCE_GROUP }}'
     body:
       admin: true
-      cluster: "cbaf7pcd0jqk1ilrm7hg"
+      cluster: '{{ IC_CLUSTER_ID }}'
       endpointType: "public"
       format: "zip"
       network: true
