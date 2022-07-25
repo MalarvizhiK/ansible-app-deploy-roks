@@ -32,7 +32,7 @@
 
 - name: Read config.yaml into kube_config var
   shell:
-    cmd: find "{{kube_config_path}}" -name "*.yml"
+    cmd: find "{{kube_config_path}}" -name "*.yaml"
   register: kube_config
 
 - name: Display the kubeconfig file path
