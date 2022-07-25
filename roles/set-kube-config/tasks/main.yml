@@ -1,13 +1,21 @@
 - name: Download kubeconfig
-  get_url:
-      url: https://containers.cloud.ibm.com/global/v1/clusters/{{ cluster_id }}/config
-      dest: "{{ zip_path }}"
-      force: yes
-      timeout: 40
-      headers: 
+  ansible.builtin.uri:
+    url: https://your.form.based.auth.example.com/index.php
+    method: POST
+    body_format: form-urlencoded
+    dest: "{{ zip_path }}"
+    headers: 
         Authorization: '{{ IC_IAM_TOKEN }}'
         X-Auth-Refresh-Token: '{{ IC_IAM_REFRESH_TOKEN }}'
-          
+        X-Auth-Resource-Group: '42ee88169dd7406584925447bc5b25eb'
+    body:
+      admin: true
+      cluster: "cbaf7pcd0jqk1ilrm7hg"
+      endpointType: "public"
+      format: "zip"
+      network: true
+    status_code: 200
+        
 - name: Delete earlier instances of kube config if any
   file:
     path: "{{ kube_config_path }}"
