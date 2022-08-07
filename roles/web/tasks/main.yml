@@ -19,8 +19,13 @@
           spec:
             containers:
               - name: appflasknode
-                image: us.icr.io/malar-ns/my-python-app:latest
+                image: us.icr.io/malar-ns/cloudant-python-alb-app:latest
                 ports:
                   - containerPort: 8000
                 imagePullPolicy: Always
+                env:
+                - name: APIKEY
+                  value: "{{ API_KEY }}"
+                - name: CLOUDANT_URL
+                  value: "{{ CLOUDANT_URL }}"
 

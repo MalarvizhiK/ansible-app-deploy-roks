@@ -5,12 +5,14 @@
     temp_path: /tmp
   pre_tasks:
   - set_fact:
-      zip_path: /tmp/kubeConfig-{{ cluster_id }}.zip
-      kube_config_path: /tmp/kubeConfig-{{ cluster_id }}
+      zip_path: /tmp/kubeConfig-{{ lookup('env','IC_CLUSTER_ID') }}.zip
+      kube_config_path: /tmp/kubeConfig-{{ lookup('env','IC_CLUSTER_ID') }}
       IC_IAM_TOKEN: "{{ lookup('env','IC_IAM_TOKEN') }}"
       IC_IAM_REFRESH_TOKEN: "{{ lookup('env','IC_IAM_REFRESH_TOKEN') }}"
       IC_RESOURCE_GROUP: "{{ lookup('env','IC_RESOURCE_GROUP') }}"
       IC_CLUSTER_ID: "{{ lookup('env','IC_CLUSTER_ID') }}"
+      API_KEY: "{{ lookup('env','API_KEY') }}"
+      CLOUDANT_URL: "{{ lookup('env','CLOUDANT_URL') }}"
 
 - name: apply common configuration to all nodes
   hosts: localhost
