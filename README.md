@@ -31,7 +31,8 @@ This playbook demonstrate how to use the Ansible playbook in IBM Cloud Schematic
 
 |Input variable|Required/ optional|Data type|Description|
 |--|--|--|--|
-|cluster_id|Required|String|[Cluster ID]((https://cloud.ibm.com/catalog?category=containers#services)) from your IBM Cloud account.|
+|API_KEY|Required|String|[Cloudant API KEY]((https://cloud.ibm.com/catalog?category=containers#services)) from your IBM Cloud account.|
+|CLOUDANT_URL|Required|String|[Cloudant SERVICE URL]((https://cloud.ibm.com/catalog?category=containers#services)) from your IBM Cloud account.|
 |IC_IAM_TOKEN|Required|String|Enter [IAM token](https://cloud.ibm.com/docs/account?topic=account-serviceauth) from  your IBM Cloud your account.|
 |IC_IAM_REFRESH_TOKEN| Required| String |Enter your IAM refresh token. From your terminal run `cat ~/.bluemix/config.json` to view your IAM refresh token.|
 |IC_RESOURCE_GROUP| Required|String|Resource group id (ibmcloud resource groups) from your IBM Cloud account.|
