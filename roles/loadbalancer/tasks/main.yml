@@ -1,5 +1,5 @@
 - name: Create alb web service 
-  k8s:
+  kubernetes.core.k8s:
     kubeconfig: "{{ kube_config.stdout }}"
     api_version: v1
     namespace: default
